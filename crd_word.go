@@ -14,59 +14,11 @@ import (
 	"github.com/davecgh/go-spew/spew"
 )
 
-var wordMap = make(map[string]int)
+var wordMap map[string]int
 
-func BuildDigest(rootPath string) {
+func buildWordMap(rootPath string) {
+	wordMap = make(map[string]int)
 
-	generateCodeReviewDigest(rootPath)
-	// 排序输出到文件
-	saveWordMap()
-	printAst()
-}
-
-func saveWordMap() {
-	keyList := make([]string, len(wordMap))
-	keyIdx := 0
-	for key, _ := range wordMap {
-		keyList[keyIdx] = key
-		keyIdx++
-	}
-	sort.Strings(keyList)
-
-	// save word map
-	path, _ := os.Getwd()
-	crdPath := path + "./.crd/"
-	err := os.MkdirAll(crdPath, 0644)
-	if err != nil {
-		return
-	}
-	filename := crdPath + "word_list.txt"
-	os.Remove(filename)
-	file, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE, 0644)
-	if err != nil {
-		return
-	}
-	for _, word := range keyList {
-		file.WriteString(word + " " + fmt.Sprintf("%d", wordMap[word]) + "\n")
-	}
-}
-
-func printAst() {
-	filename := "./test/test.go"
-
-	fset := token.NewFileSet()
-	f, err := parser.ParseFile(fset, filename, nil, 0)
-
-	if err != nil {
-		fmt.Printf("err = %s", err)
-	}
-	of, err := os.OpenFile("./test/test.ast", os.O_CREATE|os.O_RDWR, 0)
-	// ast.Print(fset, f)
-	ast.Fprint(of, fset, f, nil)
-
-}
-
-func generateCodeReviewDigest(rootPath string) {
 	inspectFunc := func(node ast.Node) bool {
 		// ident, ok := node.(*ast.Ident)
 		// if ok {
@@ -141,6 +93,9 @@ func generateCodeReviewDigest(rootPath string) {
 
 	// 遍历文件夹
 	walkDir(rootPath, inspectFunc)
+	saveWordMap()
+
+	wordMap = nil
 }
 
 func walkDir(dirPath string, inspectFunc func(node ast.Node) bool) {
@@ -243,4 +198,31 @@ func isSameWord(ch byte, allUpperCase *bool) bool {
 		return true
 	}
 	return false
+}
+
+func saveWordMap() {
+	keyList := make([]string, len(wordMap))
+	keyIdx := 0
+	for key, _ := range wordMap {
+		keyList[keyIdx] = key
+		keyIdx++
+	}
+	sort.Strings(keyList)
+
+	// save word map
+	path, _ := os.Getwd()
+	crdPath := path + "./.crd/"
+	err := os.MkdirAll(crdPath, 0644)
+	if err != nil {
+		return
+	}
+	filename := crdPath + "word_list.txt"
+	os.Remove(filename)
+	file, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE, 0644)
+	if err != nil {
+		return
+	}
+	for _, word := range keyList {
+		file.WriteString(word + " " + fmt.Sprintf("%d", wordMap[word]) + "\n")
+	}
 }
