@@ -1,15 +1,15 @@
      0  *ast.File {
      1  .  Doc: nil
-     2  .  Package: ./src/test.go:1:1
+     2  .  Package: ./test_data/test.go:1:1
      3  .  Name: *ast.Ident {
-     4  .  .  NamePos: ./src/test.go:1:9
+     4  .  .  NamePos: ./test_data/test.go:1:9
      5  .  .  Name: "main"
      6  .  .  Obj: nil
      7  .  }
      8  .  Decls: []ast.Decl (len = 2) {
      9  .  .  0: *ast.GenDecl {
     10  .  .  .  Doc: nil
-    11  .  .  .  TokPos: ./src/test.go:3:1
+    11  .  .  .  TokPos: ./test_data/test.go:3:1
     12  .  .  .  Tok: import
     13  .  .  .  Lparen: -
     14  .  .  .  Specs: []ast.Spec (len = 1) {
@@ -17,7 +17,7 @@
     16  .  .  .  .  .  Doc: nil
     17  .  .  .  .  .  Name: nil
     18  .  .  .  .  .  Path: *ast.BasicLit {
-    19  .  .  .  .  .  .  ValuePos: ./src/test.go:3:8
+    19  .  .  .  .  .  .  ValuePos: ./test_data/test.go:3:8
     20  .  .  .  .  .  .  Kind: STRING
     21  .  .  .  .  .  .  Value: "\"fmt\""
     22  .  .  .  .  .  }
@@ -31,7 +31,7 @@
     30  .  .  .  Doc: nil
     31  .  .  .  Recv: nil
     32  .  .  .  Name: *ast.Ident {
-    33  .  .  .  .  NamePos: ./src/test.go:5:6
+    33  .  .  .  .  NamePos: ./test_data/test.go:5:6
     34  .  .  .  .  Name: "main"
     35  .  .  .  .  Obj: *ast.Object {
     36  .  .  .  .  .  Kind: func
@@ -42,22 +42,22 @@
     41  .  .  .  .  }
     42  .  .  .  }
     43  .  .  .  Type: *ast.FuncType {
-    44  .  .  .  .  Func: ./src/test.go:5:1
+    44  .  .  .  .  Func: ./test_data/test.go:5:1
     45  .  .  .  .  TypeParams: nil
     46  .  .  .  .  Params: *ast.FieldList {
-    47  .  .  .  .  .  Opening: ./src/test.go:5:10
+    47  .  .  .  .  .  Opening: ./test_data/test.go:5:10
     48  .  .  .  .  .  List: nil
-    49  .  .  .  .  .  Closing: ./src/test.go:5:11
+    49  .  .  .  .  .  Closing: ./test_data/test.go:5:11
     50  .  .  .  .  }
     51  .  .  .  .  Results: nil
     52  .  .  .  }
     53  .  .  .  Body: *ast.BlockStmt {
-    54  .  .  .  .  Lbrace: ./src/test.go:5:13
+    54  .  .  .  .  Lbrace: ./test_data/test.go:5:13
     55  .  .  .  .  List: []ast.Stmt (len = 6) {
     56  .  .  .  .  .  0: *ast.AssignStmt {
     57  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
     58  .  .  .  .  .  .  .  0: *ast.Ident {
-    59  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:6:2
+    59  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:6:2
     60  .  .  .  .  .  .  .  .  Name: "a"
     61  .  .  .  .  .  .  .  .  Obj: *ast.Object {
     62  .  .  .  .  .  .  .  .  .  Kind: var
@@ -68,11 +68,11 @@
     67  .  .  .  .  .  .  .  .  }
     68  .  .  .  .  .  .  .  }
     69  .  .  .  .  .  .  }
-    70  .  .  .  .  .  .  TokPos: ./src/test.go:6:4
+    70  .  .  .  .  .  .  TokPos: ./test_data/test.go:6:4
     71  .  .  .  .  .  .  Tok: :=
     72  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
     73  .  .  .  .  .  .  .  0: *ast.BasicLit {
-    74  .  .  .  .  .  .  .  .  ValuePos: ./src/test.go:6:7
+    74  .  .  .  .  .  .  .  .  ValuePos: ./test_data/test.go:6:7
     75  .  .  .  .  .  .  .  .  Kind: INT
     76  .  .  .  .  .  .  .  .  Value: "1"
     77  .  .  .  .  .  .  .  }
@@ -81,7 +81,7 @@
     80  .  .  .  .  .  1: *ast.DeclStmt {
     81  .  .  .  .  .  .  Decl: *ast.GenDecl {
     82  .  .  .  .  .  .  .  Doc: nil
-    83  .  .  .  .  .  .  .  TokPos: ./src/test.go:7:2
+    83  .  .  .  .  .  .  .  TokPos: ./test_data/test.go:7:2
     84  .  .  .  .  .  .  .  Tok: var
     85  .  .  .  .  .  .  .  Lparen: -
     86  .  .  .  .  .  .  .  Specs: []ast.Spec (len = 1) {
@@ -89,7 +89,7 @@
     88  .  .  .  .  .  .  .  .  .  Doc: nil
     89  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
     90  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
-    91  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:7:6
+    91  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:7:6
     92  .  .  .  .  .  .  .  .  .  .  .  Name: "b"
     93  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
     94  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
@@ -101,13 +101,13 @@
    100  .  .  .  .  .  .  .  .  .  .  }
    101  .  .  .  .  .  .  .  .  .  }
    102  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
-   103  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:7:8
+   103  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:7:8
    104  .  .  .  .  .  .  .  .  .  .  Name: "int"
    105  .  .  .  .  .  .  .  .  .  .  Obj: nil
    106  .  .  .  .  .  .  .  .  .  }
    107  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
    108  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
-   109  .  .  .  .  .  .  .  .  .  .  .  ValuePos: ./src/test.go:7:14
+   109  .  .  .  .  .  .  .  .  .  .  .  ValuePos: ./test_data/test.go:7:14
    110  .  .  .  .  .  .  .  .  .  .  .  Kind: INT
    111  .  .  .  .  .  .  .  .  .  .  .  Value: "0"
    112  .  .  .  .  .  .  .  .  .  .  }
@@ -119,11 +119,11 @@
    118  .  .  .  .  .  .  }
    119  .  .  .  .  .  }
    120  .  .  .  .  .  2: *ast.ForStmt {
-   121  .  .  .  .  .  .  For: ./src/test.go:8:2
+   121  .  .  .  .  .  .  For: ./test_data/test.go:8:2
    122  .  .  .  .  .  .  Init: *ast.AssignStmt {
    123  .  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
    124  .  .  .  .  .  .  .  .  0: *ast.Ident {
-   125  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:8:6
+   125  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:8:6
    126  .  .  .  .  .  .  .  .  .  Name: "i"
    127  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
    128  .  .  .  .  .  .  .  .  .  .  Kind: var
@@ -134,11 +134,11 @@
    133  .  .  .  .  .  .  .  .  .  }
    134  .  .  .  .  .  .  .  .  }
    135  .  .  .  .  .  .  .  }
-   136  .  .  .  .  .  .  .  TokPos: ./src/test.go:8:8
+   136  .  .  .  .  .  .  .  TokPos: ./test_data/test.go:8:8
    137  .  .  .  .  .  .  .  Tok: :=
    138  .  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
    139  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
-   140  .  .  .  .  .  .  .  .  .  ValuePos: ./src/test.go:8:11
+   140  .  .  .  .  .  .  .  .  .  ValuePos: ./test_data/test.go:8:11
    141  .  .  .  .  .  .  .  .  .  Kind: INT
    142  .  .  .  .  .  .  .  .  .  Value: "0"
    143  .  .  .  .  .  .  .  .  }
@@ -146,56 +146,56 @@
    145  .  .  .  .  .  .  }
    146  .  .  .  .  .  .  Cond: *ast.BinaryExpr {
    147  .  .  .  .  .  .  .  X: *ast.Ident {
-   148  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:8:14
+   148  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:8:14
    149  .  .  .  .  .  .  .  .  Name: "i"
    150  .  .  .  .  .  .  .  .  Obj: *(obj @ 127)
    151  .  .  .  .  .  .  .  }
-   152  .  .  .  .  .  .  .  OpPos: ./src/test.go:8:16
+   152  .  .  .  .  .  .  .  OpPos: ./test_data/test.go:8:16
    153  .  .  .  .  .  .  .  Op: <
    154  .  .  .  .  .  .  .  Y: *ast.Ident {
-   155  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:8:18
+   155  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:8:18
    156  .  .  .  .  .  .  .  .  Name: "a"
    157  .  .  .  .  .  .  .  .  Obj: *(obj @ 61)
    158  .  .  .  .  .  .  .  }
    159  .  .  .  .  .  .  }
    160  .  .  .  .  .  .  Post: *ast.IncDecStmt {
    161  .  .  .  .  .  .  .  X: *ast.Ident {
-   162  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:8:21
+   162  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:8:21
    163  .  .  .  .  .  .  .  .  Name: "i"
    164  .  .  .  .  .  .  .  .  Obj: *(obj @ 127)
    165  .  .  .  .  .  .  .  }
-   166  .  .  .  .  .  .  .  TokPos: ./src/test.go:8:22
+   166  .  .  .  .  .  .  .  TokPos: ./test_data/test.go:8:22
    167  .  .  .  .  .  .  .  Tok: ++
    168  .  .  .  .  .  .  }
    169  .  .  .  .  .  .  Body: *ast.BlockStmt {
-   170  .  .  .  .  .  .  .  Lbrace: ./src/test.go:8:25
+   170  .  .  .  .  .  .  .  Lbrace: ./test_data/test.go:8:25
    171  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
    172  .  .  .  .  .  .  .  .  0: *ast.IncDecStmt {
    173  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
-   174  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:9:3
+   174  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:9:3
    175  .  .  .  .  .  .  .  .  .  .  Name: "b"
    176  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 93)
    177  .  .  .  .  .  .  .  .  .  }
-   178  .  .  .  .  .  .  .  .  .  TokPos: ./src/test.go:9:4
+   178  .  .  .  .  .  .  .  .  .  TokPos: ./test_data/test.go:9:4
    179  .  .  .  .  .  .  .  .  .  Tok: ++
    180  .  .  .  .  .  .  .  .  }
    181  .  .  .  .  .  .  .  }
-   182  .  .  .  .  .  .  .  Rbrace: ./src/test.go:10:2
+   182  .  .  .  .  .  .  .  Rbrace: ./test_data/test.go:10:2
    183  .  .  .  .  .  .  }
    184  .  .  .  .  .  }
    185  .  .  .  .  .  3: *ast.AssignStmt {
    186  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
    187  .  .  .  .  .  .  .  0: *ast.Ident {
-   188  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:11:2
+   188  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:11:2
    189  .  .  .  .  .  .  .  .  Name: "a"
    190  .  .  .  .  .  .  .  .  Obj: *(obj @ 61)
    191  .  .  .  .  .  .  .  }
    192  .  .  .  .  .  .  }
-   193  .  .  .  .  .  .  TokPos: ./src/test.go:11:4
+   193  .  .  .  .  .  .  TokPos: ./test_data/test.go:11:4
    194  .  .  .  .  .  .  Tok: =
    195  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
    196  .  .  .  .  .  .  .  0: *ast.BasicLit {
-   197  .  .  .  .  .  .  .  .  ValuePos: ./src/test.go:11:6
+   197  .  .  .  .  .  .  .  .  ValuePos: ./test_data/test.go:11:6
    198  .  .  .  .  .  .  .  .  Kind: INT
    199  .  .  .  .  .  .  .  .  Value: "2"
    200  .  .  .  .  .  .  .  }
@@ -204,7 +204,7 @@
    203  .  .  .  .  .  4: *ast.AssignStmt {
    204  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
    205  .  .  .  .  .  .  .  0: *ast.Ident {
-   206  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:13:2
+   206  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:13:2
    207  .  .  .  .  .  .  .  .  Name: "strList"
    208  .  .  .  .  .  .  .  .  Obj: *ast.Object {
    209  .  .  .  .  .  .  .  .  .  Kind: var
@@ -215,46 +215,46 @@
    214  .  .  .  .  .  .  .  .  }
    215  .  .  .  .  .  .  .  }
    216  .  .  .  .  .  .  }
-   217  .  .  .  .  .  .  TokPos: ./src/test.go:13:10
+   217  .  .  .  .  .  .  TokPos: ./test_data/test.go:13:10
    218  .  .  .  .  .  .  Tok: :=
    219  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
    220  .  .  .  .  .  .  .  0: *ast.CompositeLit {
    221  .  .  .  .  .  .  .  .  Type: *ast.ArrayType {
-   222  .  .  .  .  .  .  .  .  .  Lbrack: ./src/test.go:13:13
+   222  .  .  .  .  .  .  .  .  .  Lbrack: ./test_data/test.go:13:13
    223  .  .  .  .  .  .  .  .  .  Len: nil
    224  .  .  .  .  .  .  .  .  .  Elt: *ast.Ident {
-   225  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:13:15
+   225  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:13:15
    226  .  .  .  .  .  .  .  .  .  .  Name: "string"
    227  .  .  .  .  .  .  .  .  .  .  Obj: nil
    228  .  .  .  .  .  .  .  .  .  }
    229  .  .  .  .  .  .  .  .  }
-   230  .  .  .  .  .  .  .  .  Lbrace: ./src/test.go:13:21
+   230  .  .  .  .  .  .  .  .  Lbrace: ./test_data/test.go:13:21
    231  .  .  .  .  .  .  .  .  Elts: []ast.Expr (len = 3) {
    232  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
-   233  .  .  .  .  .  .  .  .  .  .  ValuePos: ./src/test.go:13:22
+   233  .  .  .  .  .  .  .  .  .  .  ValuePos: ./test_data/test.go:13:22
    234  .  .  .  .  .  .  .  .  .  .  Kind: STRING
    235  .  .  .  .  .  .  .  .  .  .  Value: "\"hello\""
    236  .  .  .  .  .  .  .  .  .  }
    237  .  .  .  .  .  .  .  .  .  1: *ast.BasicLit {
-   238  .  .  .  .  .  .  .  .  .  .  ValuePos: ./src/test.go:13:31
+   238  .  .  .  .  .  .  .  .  .  .  ValuePos: ./test_data/test.go:13:31
    239  .  .  .  .  .  .  .  .  .  .  Kind: STRING
    240  .  .  .  .  .  .  .  .  .  .  Value: "\"world\""
    241  .  .  .  .  .  .  .  .  .  }
    242  .  .  .  .  .  .  .  .  .  2: *ast.BasicLit {
-   243  .  .  .  .  .  .  .  .  .  .  ValuePos: ./src/test.go:13:40
+   243  .  .  .  .  .  .  .  .  .  .  ValuePos: ./test_data/test.go:13:40
    244  .  .  .  .  .  .  .  .  .  .  Kind: STRING
    245  .  .  .  .  .  .  .  .  .  .  Value: "\"world\""
    246  .  .  .  .  .  .  .  .  .  }
    247  .  .  .  .  .  .  .  .  }
-   248  .  .  .  .  .  .  .  .  Rbrace: ./src/test.go:13:47
+   248  .  .  .  .  .  .  .  .  Rbrace: ./test_data/test.go:13:47
    249  .  .  .  .  .  .  .  .  Incomplete: false
    250  .  .  .  .  .  .  .  }
    251  .  .  .  .  .  .  }
    252  .  .  .  .  .  }
    253  .  .  .  .  .  5: *ast.RangeStmt {
-   254  .  .  .  .  .  .  For: ./src/test.go:14:2
+   254  .  .  .  .  .  .  For: ./test_data/test.go:14:2
    255  .  .  .  .  .  .  Key: *ast.Ident {
-   256  .  .  .  .  .  .  .  NamePos: ./src/test.go:14:6
+   256  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:14:6
    257  .  .  .  .  .  .  .  Name: "_"
    258  .  .  .  .  .  .  .  Obj: *ast.Object {
    259  .  .  .  .  .  .  .  .  Kind: var
@@ -263,7 +263,7 @@
    262  .  .  .  .  .  .  .  .  .  Lhs: []ast.Expr (len = 2) {
    263  .  .  .  .  .  .  .  .  .  .  0: *(obj @ 255)
    264  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
-   265  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:14:9
+   265  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:14:9
    266  .  .  .  .  .  .  .  .  .  .  .  Name: "str"
    267  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
    268  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
@@ -274,14 +274,14 @@
    273  .  .  .  .  .  .  .  .  .  .  .  }
    274  .  .  .  .  .  .  .  .  .  .  }
    275  .  .  .  .  .  .  .  .  .  }
-   276  .  .  .  .  .  .  .  .  .  TokPos: ./src/test.go:14:13
+   276  .  .  .  .  .  .  .  .  .  TokPos: ./test_data/test.go:14:13
    277  .  .  .  .  .  .  .  .  .  Tok: :=
    278  .  .  .  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
    279  .  .  .  .  .  .  .  .  .  .  0: *ast.UnaryExpr {
    280  .  .  .  .  .  .  .  .  .  .  .  OpPos: -
    281  .  .  .  .  .  .  .  .  .  .  .  Op: range
    282  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
-   283  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:14:22
+   283  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:14:22
    284  .  .  .  .  .  .  .  .  .  .  .  .  Name: "strList"
    285  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 208)
    286  .  .  .  .  .  .  .  .  .  .  .  }
@@ -293,44 +293,44 @@
    292  .  .  .  .  .  .  .  }
    293  .  .  .  .  .  .  }
    294  .  .  .  .  .  .  Value: *(obj @ 264)
-   295  .  .  .  .  .  .  TokPos: ./src/test.go:14:13
+   295  .  .  .  .  .  .  TokPos: ./test_data/test.go:14:13
    296  .  .  .  .  .  .  Tok: :=
    297  .  .  .  .  .  .  X: *(obj @ 282)
    298  .  .  .  .  .  .  Body: *ast.BlockStmt {
-   299  .  .  .  .  .  .  .  Lbrace: ./src/test.go:14:30
+   299  .  .  .  .  .  .  .  Lbrace: ./test_data/test.go:14:30
    300  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
    301  .  .  .  .  .  .  .  .  0: *ast.ExprStmt {
    302  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
    303  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
    304  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
-   305  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:15:3
+   305  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:15:3
    306  .  .  .  .  .  .  .  .  .  .  .  .  Name: "fmt"
    307  .  .  .  .  .  .  .  .  .  .  .  .  Obj: nil
    308  .  .  .  .  .  .  .  .  .  .  .  }
    309  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
-   310  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:15:7
+   310  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:15:7
    311  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Println"
    312  .  .  .  .  .  .  .  .  .  .  .  .  Obj: nil
    313  .  .  .  .  .  .  .  .  .  .  .  }
    314  .  .  .  .  .  .  .  .  .  .  }
-   315  .  .  .  .  .  .  .  .  .  .  Lparen: ./src/test.go:15:14
+   315  .  .  .  .  .  .  .  .  .  .  Lparen: ./test_data/test.go:15:14
    316  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
    317  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
-   318  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./src/test.go:15:15
+   318  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: ./test_data/test.go:15:15
    319  .  .  .  .  .  .  .  .  .  .  .  .  Name: "str"
    320  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 267)
    321  .  .  .  .  .  .  .  .  .  .  .  }
    322  .  .  .  .  .  .  .  .  .  .  }
    323  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
-   324  .  .  .  .  .  .  .  .  .  .  Rparen: ./src/test.go:15:18
+   324  .  .  .  .  .  .  .  .  .  .  Rparen: ./test_data/test.go:15:18
    325  .  .  .  .  .  .  .  .  .  }
    326  .  .  .  .  .  .  .  .  }
    327  .  .  .  .  .  .  .  }
-   328  .  .  .  .  .  .  .  Rbrace: ./src/test.go:17:2
+   328  .  .  .  .  .  .  .  Rbrace: ./test_data/test.go:17:2
    329  .  .  .  .  .  .  }
    330  .  .  .  .  .  }
    331  .  .  .  .  }
-   332  .  .  .  .  Rbrace: ./src/test.go:18:1
+   332  .  .  .  .  Rbrace: ./test_data/test.go:18:1
    333  .  .  .  }
    334  .  .  }
    335  .  }
