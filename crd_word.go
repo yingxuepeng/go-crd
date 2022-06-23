@@ -20,24 +20,31 @@ func buildWordMap(rootPath string) {
 	wordMap = make(map[string]int)
 
 	inspectFunc := func(node ast.Node) bool {
-		// ident, ok := node.(*ast.Ident)
-		// if ok {
-		// 	spew.Dump(ident.Name)
-		// }
 		// func
 		funcDecl, ok := node.(*ast.FuncDecl)
 		if ok {
 			printIdent("F", funcDecl.Name)
 			// func params
 			for _, param := range funcDecl.Type.Params.List {
-				printNames("fi", param.Names)
+				printNames("fv", param.Names)
 			}
 			// return true
+			if funcDecl.Type.Results != nil {
+				for _, param := range funcDecl.Type.Results.List {
+					printNames("fr", param.Names)
+				}
+			}
 		}
 		funcLit, ok := node.(*ast.FuncLit)
 		if ok {
 			for _, param := range funcLit.Type.Params.List {
-				printNames("fi", param.Names)
+				printNames("FL", param.Names)
+			}
+			// return true
+			if funcLit.Type.Results != nil {
+				for _, param := range funcLit.Type.Results.List {
+					printNames("flr", param.Names)
+				}
 			}
 		}
 
@@ -51,14 +58,29 @@ func buildWordMap(rootPath string) {
 		structType, ok := node.(*ast.StructType)
 		if ok {
 			for _, field := range structType.Fields.List {
-				printNames("f", field.Names)
+				printNames("sv", field.Names)
 			}
 		}
 		// it
 		interfaceType, ok := node.(*ast.InterfaceType)
 		if ok {
 			for _, method := range interfaceType.Methods.List {
-				printNames("im", method.Names)
+
+				ifuncType, ok := method.Type.(*ast.FuncType)
+				if ok {
+					printNames("IM", method.Names)
+
+					for _, param := range ifuncType.Params.List {
+						printNames("imv", param.Names)
+					}
+					// return true
+					if ifuncType.Results != nil {
+						for _, param := range ifuncType.Results.List {
+							printNames("imr", param.Names)
+						}
+					}
+
+				}
 			}
 		}
 		// var
@@ -91,14 +113,14 @@ func buildWordMap(rootPath string) {
 		return true
 	}
 
-	// 遍历文件夹
-	walkDir(rootPath, inspectFunc)
+	// build word map
+	createWordMap(rootPath, inspectFunc)
 	saveWordMap()
 
 	wordMap = nil
 }
 
-func walkDir(dirPath string, inspectFunc func(node ast.Node) bool) {
+func createWordMap(dirPath string, inspectFunc func(node ast.Node) bool) {
 	fileInfos, err := ioutil.ReadDir(dirPath)
 	if err != nil {
 		return
@@ -107,7 +129,7 @@ func walkDir(dirPath string, inspectFunc func(node ast.Node) bool) {
 	for _, fileInfo := range fileInfos {
 		fileName := dirPath + "/" + fileInfo.Name()
 		if fileInfo.IsDir() {
-			walkDir(fileName, inspectFunc)
+			createWordMap(fileName, inspectFunc)
 		} else if filepath.Ext(fileName) == ".go" {
 			inspectFile(fileName, inspectFunc)
 		}

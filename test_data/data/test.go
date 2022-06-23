@@ -13,6 +13,5 @@ func main() {
 	strList := []string{"hello", "world", "world"}
 	for _, str := range strList {
 		fmt.Println(str)
-
 	}
 }
