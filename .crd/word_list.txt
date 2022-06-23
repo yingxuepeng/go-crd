@@ -1,6 +1,0 @@
-a 2
-b 2
-i 2
-list 2
-main 2
-str 4

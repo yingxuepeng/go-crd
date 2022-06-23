@@ -216,13 +216,13 @@ func saveWordMap() {
 	if err != nil {
 		return
 	}
-	filename := crdPath + "word_list.txt"
+	filename := crdPath + "word_list.csv"
 	os.Remove(filename)
 	file, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {
 		return
 	}
 	for _, word := range keyList {
-		file.WriteString(word + " " + fmt.Sprintf("%d", wordMap[word]) + "\n")
+		file.WriteString(word + ", " + fmt.Sprintf("%d", wordMap[word]) + ",\n")
 	}
 }
