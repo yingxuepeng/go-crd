@@ -15,7 +15,8 @@ type struct3 struct {
 
 type interface1 interface {
 	if1m1(if1m1v1 string, if1m1v2 int) (if1m1r1 string, if1m1r2 string)
-	if1m2(if1m2v1 string) struct3
+	if1m2(if1m2v1 string) struct2
+	if1m3(if1m2v1 string) (if1m3r1 struct3)
 }
 
 func func1(f1v1 string, f1v2 byte) (f1r1 int, f1r2 int) {
