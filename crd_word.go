@@ -105,8 +105,13 @@ func buildWordMap(rootPath string) {
 		rangeStmt, ok := node.(*ast.RangeStmt)
 		if ok {
 			if rangeStmt.Tok == token.DEFINE {
-				printIdent("va", rangeStmt.Key.(*ast.Ident))
-				printIdent("va", rangeStmt.Value.(*ast.Ident))
+				if rangeStmt.Key != nil {
+					printIdent("va", rangeStmt.Key.(*ast.Ident))
+				}
+				if rangeStmt.Value != nil {
+					printIdent("va", rangeStmt.Value.(*ast.Ident))
+				}
+
 			}
 		}
 
