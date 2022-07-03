@@ -238,7 +238,7 @@ func saveWordMap() {
 
 	// save word map
 	path, _ := os.Getwd()
-	crdPath := path + "./.crd/"
+	crdPath := path + "/.crd/"
 	err := os.MkdirAll(crdPath, 0644)
 	if err != nil {
 		return
